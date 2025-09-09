@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pernikahan Batak - Maria & Jhonson</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff8f0;
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #8b0000, #d4af37);
+      padding: 80px 20px;
+      color: white;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-family: 'Georgia', serif;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    section {
+      padding: 50px 20px;
+    }
+    h2 {
+      color: #8b0000;
+      margin-bottom: 20px;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      color: #d4af37;
+    }
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .family {
+      background: #f9f2ec;
+      border: 2px solid #d4af37;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    footer {
+      background: #222;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .horas {
+      font-size: 2rem;
+      color: #d4af37;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Maria & Jhonson</h1>
+    <p>Horas! Kami mengundang Anda menghadiri hari bahagia kami</p>
+    <p><strong>10 Desember 2025</strong></p>
+  </header>
+
+  <section>
+    <h2>Hitung Mundur</h2>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <section>
+    <h2>Rangkaian Acara</h2>
+    <p><strong>Martumpol:</strong> 3 Desember 2025 - Gereja HKBP</p>
+    <p><strong>Adat & Pemberkatan:</strong> 10 Desember 2025 - Gereja HKBP</p>
+    <p><strong>Pesta Adat Batak:</strong> 10 Desember 2025 - Gedung Serbaguna</p>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Galeri Foto</h2>
+    <div class="gallery">
+      <img src="https://picsum.photos/300/300?5" alt="foto1">
+      <img src="https://picsum.photos/300/300?6" alt="foto2">
+      <img src="https://picsum.photos/300/300?7" alt="foto3">
+      <img src="https://picsum.photos/300/300?8" alt="foto4">
+    </div>
+  </section>
+
+  <section class="family">
+    <h2>Keluarga</h2>
+    <p><strong>Paranak:</strong> Keluarga Bapak Tua Simanjuntak & Boru Sihombing</p>
+    <p><strong>Parboru:</strong> Keluarga Bapak Tua Manurung & Boru Hutabarat</p>
+  </section>
+
+  <section>
+    <h2>Konfirmasi Kehadiran</h2>
+    <p>Silakan isi form berikut untuk konfirmasi kehadiran:</p>
+    <a href="https://forms.gle/" target="_blank">👉 Isi Form RSVP</a>
+  </section>
+
+  <footer>
+    <div class="horas">HORAS!</div>
+    <p>Dengan penuh rasa syukur, kami menantikan kehadiran Bapak/Ibu/Saudara/i dalam pesta adat pernikahan kami.</p>
+  </footer>
+
+  <script>
+    // Hitung Mundur
+    const targetDate = new Date("Dec 10, 2025 09:00:00").getTime();
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "Pesta adat telah dimulai 🎉";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
